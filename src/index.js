@@ -8,11 +8,16 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 //paginas
 import {Home} from "./pages/Home/home";
-
+import {Dashboard} from "./pages/Dashboard/dashboard";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />
+    
+  },
+  {
+    path: "/Dashboard",
+    element: <Dashboard />
     
   }
 ]);
