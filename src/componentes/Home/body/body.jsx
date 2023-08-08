@@ -1,4 +1,4 @@
-import img from "../../assets/img/5WFSF32YAJEFTNYFFLQC7PGNG4.jpg";
+import img from "../../../assets/img/5WFSF32YAJEFTNYFFLQC7PGNG4.jpg";
 
 export function Body() {
   return (

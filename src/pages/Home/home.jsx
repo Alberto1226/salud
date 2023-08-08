@@ -4,16 +4,14 @@ import "../../css/swiper.css";
 //bootstrap
 
 //paginas
-import { Head } from "../../componentes/head/head";
-import { Footer } from "../../componentes/footer/footer";
-import { SliderVideos } from "../../componentes/sliderVideo/sliderVideos";
-import { Body } from "../../componentes/body/body";
+import { Head } from "../../componentes/Home/head/head";
+import { Footer } from "../../componentes/Home/footer/footer";
+import { Body } from "../../componentes/Home/body/body";
 
 export function Home() {
   return (
     <>
       <Head />
-      <SliderVideos />
       <Body />
       <Footer />
     </>
