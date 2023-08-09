@@ -67,10 +67,7 @@ function TblPatrocinadores(props) {
   }, []);
 
   const columns = [
-    {
-      name: "id",
-      label: "ID",
-    },
+    
     {
       name: "nombre",
       label: "NOMBRE",

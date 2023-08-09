@@ -1,4 +1,31 @@
+import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import TblCategoria from "../Categorias/tblCategoria";
+import TblPatrocinadores from "../Patrocinadores/tblPatrocinadores";
+//COMPONENTES
+
+
 export function MenuDash() {
+  const [activeMenu, setActiveMenu] = useState("home");
+  /**ver componentes */
+  const [showComponent, setShowComponent] = useState(false);
+  const [showComponent1, setShowComponent1] = useState(false);
+  const handleClick = () => {
+    setShowComponent(true);
+    setShowComponent1(false);
+  };
+  const handleClick1 = () => {
+    setShowComponent(false);
+    setShowComponent1(true);
+  };
+  /**fin ver componentes */
+  //menu
+
+  const handleMenuSelect = (menu) => {
+    setActiveMenu(menu);
+    
+  };
+  /**fin menu */
   return (
     <>
       <aside className="main-sidebar sidebar-dark-primary elevation-4">
@@ -62,22 +89,25 @@ export function MenuDash() {
                 </a>
               </li>
               <li className="nav-item">
+                <Link  onClick={handleClick}>
                 <a href="#" className="nav-link">
                   <i className="nav-icon fas fa-edit" />
                   <p>
                     Categorias
-                    
                   </p>
                 </a>
+                </Link>
               </li>
               <li className="nav-item">
+              <Link  onClick={handleClick1}>
                 <a href="#" className="nav-link">
                   <i className="nav-icon fas fa-square" />
                   <p>
                   Patrocinadores
-                   
+              
                   </p>
                 </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a href="#" className="nav-link">
@@ -95,6 +125,20 @@ export function MenuDash() {
         </div>
         {/* /.sidebar */}
       </aside>
+
+    <div className="content-wrapper">
+    {showComponent && (
+                  <div>
+                    <TblCategoria/>
+                  </div>
+    )}
+    {showComponent1 && (
+                  <div>
+                    <TblPatrocinadores/>
+                  </div>
+    )}
+    
+    </div>
     </>
   );
 }
