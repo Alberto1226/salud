@@ -4,11 +4,11 @@ import { Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from "react";
-import { Load } from "../load/load";
+import { Load } from "../../load/load";
 import { useNavigate } from "react-router-dom";
-import { registraCategoria, listarCategorias } from "../../api/categorias";
-import TblCategorias from "../tables/tableCategorias";
-import { withRouter } from "../../utils/withRouter";
+import { registraCategoria, listarCategorias } from "../../../../api/categorias";
+import TblCategorias from "../tblCategoria";
+import { withRouter } from "../../../../utils/withRouter";
 import queryString from "query-string";
 
 import { toast } from "react-toastify";

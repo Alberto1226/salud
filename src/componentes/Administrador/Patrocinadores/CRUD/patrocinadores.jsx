@@ -6,13 +6,13 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useState, useEffect } from "react";
-import { Load } from "../load/load";
-import TblPatrocinadores from "../tables/tablaPatrocinadores";
-import { registraPatrocinadores } from "../../api/patrocinadores";
-import { subeArchivosCloudinary } from "../../api/cloudinary";
-import Dropzone from "../Dropzone/Dropzone";
+import { Load } from "../../load/load";
+import TblPatrocinadores from "../tblPatrocinadores";
+import { registraPatrocinadores } from "../../../../api/patrocinadores";
+import { subeArchivosCloudinary } from "../../../../api/cloudinary";
+import Dropzone from "../../Dropzone/Dropzone";
 import "./patrocinadores.css";
-import { withRouter } from "../../utils/withRouter";
+import { withRouter } from "../../../../utils/withRouter";
 import queryString from "query-string";
 
 function Patorcinadores({history}) {
@@ -93,10 +93,6 @@ function Patorcinadores({history}) {
         <Button variant="primary" onClick={handleShow} className="btnadd">
           <FontAwesomeIcon icon={faPlus} />
         </Button>
-        <div>
-          <button onClick={notify}>Notify!</button>
-          <ToastContainer />
-        </div>
         <h1 class="text-center">Listado de Patrocinador</h1>
         <TblPatrocinadores />
       </div>

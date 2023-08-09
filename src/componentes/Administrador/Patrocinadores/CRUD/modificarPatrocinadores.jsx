@@ -6,11 +6,10 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useState, useEffect } from "react";
-import { Load } from "../load/load";
-import { TblPatrocinadores } from "../tables/tablaPatrocinadores";
-import { actualizarPatrocinadores } from "../../api/patrocinadores";
-import { subeArchivosCloudinary } from "../../api/cloudinary";
-import Dropzone from "../Dropzone/Dropzone";
+import { Load } from "../../load/load";
+import { actualizarPatrocinadores } from "../../../../api/patrocinadores";
+import { subeArchivosCloudinary } from "../../../../api/cloudinary";
+import Dropzone from "../../Dropzone/Dropzone";
 import "./patrocinadores.css";
 import queryString from "query-string";
 

@@ -3,10 +3,10 @@ import MUIDataTable from "mui-datatables";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-bootstrap/Modal";
-import { listarCategorias } from "../../api/categorias";
-import ModificarCategorias from "../categoriasVideos/ModificarCategoria";
-import EliminarCategorias from "../categoriasVideos/eliminarCategoria";
-import { withRouter } from "../../utils/withRouter";
+import { listarCategorias } from "../../../api/categorias";
+import ModificarCategorias from "./CRUD/update";
+import EliminarCategorias from "./CRUD/delete";
+import { withRouter } from "../../../utils/withRouter";
 
 //listar categorias
 //listar categorias

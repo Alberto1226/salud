@@ -2,10 +2,9 @@ import { Form } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useState, useEffect } from "react";
-import { actualizarCategoria } from "../../api/categorias";
-import Dropzone from "../Dropzone/Dropzone";
+import { actualizarCategoria } from "../../../../api/categorias";
 import queryString from "query-string";
-import { Load } from "../load/load";
+import { Load } from "../../load/load";
 
 export default function ModificarCategorias({ data, history, setShow }) {
   const idCategoria = data[0];

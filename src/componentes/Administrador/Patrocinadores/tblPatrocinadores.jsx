@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import MUIDataTable from "mui-datatables";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { listarPatrocinadores } from "../../api/patrocinadores";
+import { listarPatrocinadores } from "../../../api/patrocinadores";
 import Modal from "react-bootstrap/Modal";
-import ModificarPatorcinadores from "../patrocinadores/modificarPatrocinadores";
-import EliminarPatorcinadores from "../patrocinadores/eliminarPatrocinadores";
-import { withRouter } from "../../utils/withRouter";
+import ModificarPatorcinadores from "./CRUD/modificarPatrocinadores";
+import EliminarPatorcinadores from "./CRUD/eliminarPatrocinadores";
+import { withRouter } from "../../../utils/withRouter";
 //listar categorias
 //listar categorias
 

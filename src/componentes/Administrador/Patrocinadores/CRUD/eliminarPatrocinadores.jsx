@@ -6,9 +6,8 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useState, useEffect } from "react";
-import { Load } from "../load/load";
-import { TblPatrocinadores } from "../tables/tablaPatrocinadores";
-import { eliminarPatrocinadores } from "../../api/patrocinadores";
+import { Load } from "../../load/load";
+import { eliminarPatrocinadores } from "../../../../api/patrocinadores";
 import queryString from "query-string";
 
 export default function EliminarPatorcinadores({ data, history, setShow }) {
