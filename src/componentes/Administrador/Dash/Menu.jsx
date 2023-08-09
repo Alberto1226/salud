@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import TblCategoria from "../Categorias/tblCategoria";
-import TblPatrocinadores from "../Patrocinadores/tblPatrocinadores";
-//COMPONENTES
 
+//COMPONENTES
+import Categorias from "../Categorias/CRUD/insert";
+import Patrocinadores from "../Patrocinadores/CRUD/patrocinadores";
 
 export function MenuDash() {
   const [activeMenu, setActiveMenu] = useState("home");
@@ -129,12 +129,12 @@ export function MenuDash() {
     <div className="content-wrapper">
     {showComponent && (
                   <div>
-                    <TblCategoria/>
+                    <Categorias/>
                   </div>
     )}
     {showComponent1 && (
                   <div>
-                    <TblPatrocinadores/>
+                    <Patrocinadores/>
                   </div>
     )}
     
