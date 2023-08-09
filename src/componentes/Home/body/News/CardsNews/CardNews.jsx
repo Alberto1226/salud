@@ -1,4 +1,7 @@
-import './CardNews.css'
+import './CardNews.css';
+
+import img1 from "../../../../../assets/img/cards/doc1.png";
+import img2 from "../../../../../assets/img/cards/doc2.png";
 export function CardsNews() {
   return (
     <>
@@ -7,7 +10,7 @@ export function CardsNews() {
         <div className="news-card">
           <a href="#" className="news-card__card-link" />
           <img
-            src="https://images.pexels.com/photos/127513/pexels-photo-127513.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            src={img1}
             alt
             className="news-card__image"
           />
@@ -29,7 +32,7 @@ export function CardsNews() {
         <div className="news-card">
           <a href="#" className="news-card__card-link" />
           <img
-            src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            src={img2}
             alt
             className="news-card__image"
           />
@@ -52,7 +55,7 @@ export function CardsNews() {
         <div className="news-card">
           <a href="#" className="news-card__card-link" />
           <img
-            src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            src={img1}
             alt
             className="news-card__image"
           />
@@ -73,7 +76,7 @@ export function CardsNews() {
         <div className="news-card">
           <a href="#" className="news-card__card-link" />
           <img
-            src="https://images.pexels.com/photos/248486/pexels-photo-248486.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            src={img2}
             alt
             className="news-card__image"
           />
@@ -93,7 +96,7 @@ export function CardsNews() {
         <div className="news-card">
           <a href="#" className="news-card__card-link" />
           <img
-            src="https://images.pexels.com/photos/206660/pexels-photo-206660.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            src={img1}
             alt
             className="news-card__image"
           />
@@ -115,7 +118,7 @@ export function CardsNews() {
         <div className="news-card">
           <a href="#" className="news-card__card-link" />
           <img
-            src="https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            src={img2}
             alt
             className="news-card__image"
           />

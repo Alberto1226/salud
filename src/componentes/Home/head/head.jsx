@@ -1,4 +1,5 @@
 import "./headre.css";
+import img from "../../../assets/img/logo.webp";
 import React, { useState, useEffect } from 'react';
 export function Head(){
     const [navMenuVisible, setNavMenuVisible] = useState(false);
@@ -30,8 +31,9 @@ export function Head(){
             <div className="logo">
               <a href="#">
                 <img
-                  src="https://onclickwebdesign.com/wp-content/uploads/game_warrior_logo.png"
+                  src={img}
                   alt="Game Warrior Logo"
+                  className="logo-salud"
                 />
               </a>
             </div>

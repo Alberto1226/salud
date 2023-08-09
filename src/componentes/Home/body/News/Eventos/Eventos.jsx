@@ -1,3 +1,5 @@
+import img from "../../../../../assets/img/cards/evento1.png";
+import img1 from "../../../../../assets/img/cards/evento2.png";
 export function Eventos() {
   return (
     <>
@@ -5,12 +7,12 @@ export function Eventos() {
         <div className="flex">
           <span className="badge tournaments">Eventos Proximos</span>
           <div className="box">
-            <span className="badge premium-tournament">Premium Tournament</span>
+            <span className="badge premium-tournament">Premium </span>
             <div className="tournaments-image">
-              <img src="https://onclickwebdesign.com/wp-content/uploads/tournaments_1.jpg" />
+              <img src={img} />
             </div>
             <div className="tournaments-content">
-              <h3>Starcraft 2</h3>
+              <h3>La vida</h3>
               <div>
                 <label>Tournament Begins:</label> <strong>June 20, 2019</strong>
               </div>
@@ -32,12 +34,12 @@ export function Eventos() {
             </div>
           </div>
           <div className="box">
-            <span className="badge premium-tournament">Premium Tournament</span>
+            <span className="badge premium-tournament">Premium </span>
             <div className="tournaments-image">
-              <img src="https://onclickwebdesign.com/wp-content/uploads/tournaments_2.jpg" />
+              <img src={img1} />
             </div>
             <div className="tournaments-content">
-              <h3>World Of Warcraft</h3>
+              <h3>La Insulina</h3>
               <div>
                 <label>Tournament Begins:</label> <strong>June 20, 2019</strong>
               </div>

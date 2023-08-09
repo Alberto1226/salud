@@ -1,3 +1,7 @@
+import img from "../../../../../assets/img/cards/foto1.png";
+import imglogo from "../../../../../assets/img/logo.webp";
+import img1 from "../../../../../assets/img/cards/foto2.png";
+import img2 from "../../../../../assets/img/cards/foto3.png";
 export function ContactAndPosrt() {
   return (
     <>
@@ -5,7 +9,7 @@ export function ContactAndPosrt() {
         <div className="flex">
           <div className="game-warrior">
             {/**logo */}
-            <img src="https://onclickwebdesign.com/wp-content/uploads/footer_logo.png" />
+            <img src={imglogo} className="logo-salud"/>
            
 
             <div className="container">
@@ -125,7 +129,7 @@ export function ContactAndPosrt() {
           <div className="posts-comments-box">
             <h3>Latest Posts</h3>
             <div className="post-item">
-              <img src="https://onclickwebdesign.com/wp-content/uploads/latest_posts_1.jpg" />
+              <img src={img} />
               <div>
                 <h5>June 21, 2019</h5>
                 <p>Lorem ipsum dolor sit amet, consectectur adipiscing.</p>
@@ -133,7 +137,7 @@ export function ContactAndPosrt() {
               </div>
             </div>
             <div className="post-item">
-              <img src="https://onclickwebdesign.com/wp-content/uploads/latest_posts_2.jpg" />
+              <img src={img1} />
               <div>
                 <h5>June 21, 2019</h5>
                 <p>Lorem ipsum dolor sit amet, consectectur adipiscing.</p>
@@ -141,7 +145,7 @@ export function ContactAndPosrt() {
               </div>
             </div>
             <div className="post-item">
-              <img src="https://onclickwebdesign.com/wp-content/uploads/latest_posts_3.jpg" />
+              <img src={img2} />
               <div>
                 <h5>June 21, 2019</h5>
                 <p>Lorem ipsum dolor sit amet, consectectur adipiscing.</p>

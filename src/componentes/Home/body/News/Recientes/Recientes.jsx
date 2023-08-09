@@ -1,3 +1,7 @@
+import img from "../../../../../assets/img/cards/img1.png";
+import img1 from "../../../../../assets/img/cards/img2.png";
+import img2 from "../../../../../assets/img/cards/img3.png";
+
 export function Recientes() {
   return (
     <>
@@ -6,7 +10,7 @@ export function Recientes() {
         <div className="flex">
           <div className="box">
             <span className="badge new">New</span>
-            <img src="https://onclickwebdesign.com/wp-content/uploads/recent_games_1.jpg" />
+            <img src={img} />
             <div className="box-lower-section">
               <h4>Suspendisse ut justo tem por, rutrum</h4>
               <p>
@@ -20,7 +24,7 @@ export function Recientes() {
           </div>
           <div className="box">
             <span className="badge racing">Racing</span>
-            <img src="https://onclickwebdesign.com/wp-content/uploads/recent_games_2.jpg" />
+            <img src={img1} />
             <div className="box-lower-section">
               <h4>Susce pulvinar metus nulla, vel facilisis sem</h4>
               <p>
@@ -34,7 +38,7 @@ export function Recientes() {
           </div>
           <div className="box">
             <span className="badge adventure">Adventure</span>
-            <img src="https://onclickwebdesign.com/wp-content/uploads/recent_games_3.jpg" />
+            <img src={img2} />
             <div className="box-lower-section">
               <h4>Suspendisse ut justo tem por, rutrum</h4>
               <p>
