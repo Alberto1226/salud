@@ -1,0 +1,31 @@
+body {
+	background-image: linear-gradient(to top, transparent 60px, #fff 60px, #fff 0);
+	font: 14pt 'Crimson Text';
+	margin: 0;
+}
+html {
+	background-color: #fff;
+}
+.main {
+	padding: 0px;
+	width: 90vw;
+	max-width: 800px;
+	margin: auto;
+    margin-top: 100px;
+    background: url(../../../../../assets/img/patronfondo.png);
+    
+    
+}
+.titulonota {
+	color: dodgerblue;
+}
+.anonota{
+    float: right;
+}
+.imgNota{
+    width: 100%;
+}
+
+.VideoNotaCompleta{
+    
+}
