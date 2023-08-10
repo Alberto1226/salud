@@ -18,16 +18,21 @@ export function MenuDash() {
   const handleClick = () => {
     setShowComponent(true);
     setShowComponent1(false);
+    setShowComponent2(false);
+    setShowComponent3(false);
   };
   const handleClick1 = () => {
     setShowComponent(false);
     setShowComponent1(true);
+    setShowComponent2(false);
+    setShowComponent3(false);
   };
 
   const handleClick2 = () => {
     setShowComponent(false);
     setShowComponent1(false);
     setShowComponent2(true);
+    setShowComponent3(false);
   };
 
   const handleClick3 = () => {
