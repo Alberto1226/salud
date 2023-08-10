@@ -4,12 +4,17 @@ import React, { useState, useEffect } from "react";
 //COMPONENTES
 import Categorias from "../Categorias/CRUD/insert";
 import Patrocinadores from "../Patrocinadores/CRUD/patrocinadores";
+import Usuarios from "../Usuarios/CRUD/usuarios";
+import Series from "../NotasMedicas/CRUD/series"
 
 export function MenuDash() {
   const [activeMenu, setActiveMenu] = useState("home");
   /**ver componentes */
   const [showComponent, setShowComponent] = useState(false);
   const [showComponent1, setShowComponent1] = useState(false);
+  const [showComponent2, setShowComponent2] = useState(false);
+  const [showComponent3, setShowComponent3] = useState(false);
+
   const handleClick = () => {
     setShowComponent(true);
     setShowComponent1(false);
@@ -18,12 +23,25 @@ export function MenuDash() {
     setShowComponent(false);
     setShowComponent1(true);
   };
+
+  const handleClick2 = () => {
+    setShowComponent(false);
+    setShowComponent1(false);
+    setShowComponent2(true);
+  };
+
+  const handleClick3 = () => {
+    setShowComponent(false);
+    setShowComponent1(false);
+    setShowComponent2(false);
+    setShowComponent3(true);
+  };
   /**fin ver componentes */
   //menu
 
   const handleMenuSelect = (menu) => {
     setActiveMenu(menu);
-    
+
   };
   /**fin menu */
   return (
@@ -57,7 +75,7 @@ export function MenuDash() {
             </div>
           </div>
           {/* SidebarSearch Form */}
-          
+
           {/* Sidebar Menu */}
           <nav className="mt-2">
             <ul
@@ -73,52 +91,56 @@ export function MenuDash() {
                   <i className="nav-icon fas fa-tachometer-alt" />
                   <p>
                     Dashboard
-                    
+
                   </p>
                 </a>
-               
+
               </li>
-             
+
               <li className="nav-item">
+              <Link onClick={handleClick2}>
                 <a href="#" className="nav-link">
                   <i className="nav-icon fas fa-user" />
                   <p>
                     Usuarios
-                   
-                  </p>
-                </a>
-              </li>
-              <li className="nav-item">
-                <Link  onClick={handleClick}>
-                <a href="#" className="nav-link">
-                  <i className="nav-icon fas fa-edit" />
-                  <p>
-                    Categorias
+
                   </p>
                 </a>
                 </Link>
               </li>
               <li className="nav-item">
-              <Link  onClick={handleClick1}>
-                <a href="#" className="nav-link">
-                  <i className="nav-icon fas fa-square" />
-                  <p>
-                  Patrocinadores
-              
-                  </p>
-                </a>
+                <Link onClick={handleClick}>
+                  <a href="#" className="nav-link">
+                    <i className="nav-icon fas fa-edit" />
+                    <p>
+                      Categorias
+                    </p>
+                  </a>
                 </Link>
               </li>
               <li className="nav-item">
+                <Link onClick={handleClick1}>
+                  <a href="#" className="nav-link">
+                    <i className="nav-icon fas fa-square" />
+                    <p>
+                      Patrocinadores
+
+                    </p>
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-item">
+              <Link onClick={handleClick3}>
                 <a href="#" className="nav-link">
                   <i className="nav-icon fas fa-image" />
                   <p>
-                  Nueva Publicación
-                    
+                    Nueva Publicación
+
                   </p>
                 </a>
+                </Link>
               </li>
-              
+
             </ul>
           </nav>
           {/* /.sidebar-menu */}
@@ -126,19 +148,28 @@ export function MenuDash() {
         {/* /.sidebar */}
       </aside>
 
-    <div className="content-wrapper">
-    {showComponent && (
-                  <div>
-                    <Categorias/>
-                  </div>
-    )}
-    {showComponent1 && (
-                  <div>
-                    <Patrocinadores/>
-                  </div>
-    )}
-    
-    </div>
+      <div className="content-wrapper">
+        {showComponent && (
+          <div>
+            <Categorias />
+          </div>
+        )}
+        {showComponent1 && (
+          <div>
+            <Patrocinadores />
+          </div>
+        )}
+        {showComponent2 && (
+          <div>
+            <Usuarios />
+          </div>
+        )}
+        {showComponent3 && (
+          <div>
+            <Series />
+          </div>
+        )}
+      </div>
     </>
   );
 }
