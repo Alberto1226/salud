@@ -116,7 +116,7 @@ function TblSeries(props) {
     },
     {
       name: "actores",
-      label: "ACTORES",
+      label: "ESCRITOR",
     },
     {
       name: "director",
@@ -129,7 +129,7 @@ function TblSeries(props) {
 
     {
       name: "sinopsis",
-      label: "SINOPCIS",
+      label: "PUBLICACIÓN",
     },
     {
       name: "calificacion",
@@ -225,7 +225,7 @@ function TblSeries(props) {
                   keyboard={false}
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title>Modificar Serie</Modal.Title>
+                    <Modal.Title>Modificar</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     <ModificarSeries data={selectedRowData} history={history} setShow={setShow} />
@@ -244,7 +244,7 @@ function TblSeries(props) {
                   keyboard={false}
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title>Eliminar Serie</Modal.Title>
+                    <Modal.Title>Eliminar</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     <EliminarSeries data={selectedRowData} history={history} setShow={setShow2}/>
@@ -283,7 +283,7 @@ function TblSeries(props) {
                   keyboard={false}
                 >
                   <Modal.Header closeButton>
-                    <Modal.Title>Lista de los capitulos de la serie</Modal.Title>
+                    <Modal.Title>Lista de los capitulos</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     <TblCapitulosSeries data={selectedRowData}/>
@@ -306,7 +306,7 @@ function TblSeries(props) {
   return (
     <>
       <MUIDataTable
-        title={"Lista Series"}
+        title={"Lista Publicaciones"}
         data={listarSer}
         columns={columns}
         options={options}

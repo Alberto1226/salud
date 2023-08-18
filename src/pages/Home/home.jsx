@@ -1,5 +1,6 @@
 //css
 import "../../css/general.css";
+import "../../css/movill.css";
 import "../../css/swiper.css";
 //bootstrap
 

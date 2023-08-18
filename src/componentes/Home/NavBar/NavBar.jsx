@@ -74,9 +74,11 @@ export function NavBar() {
               </li>
             </ul>
           </nav>
+          <Link to={`/login`}>
           <a href="#" id="login-register-button">
             Login / Register
           </a>
+          </Link>
         </div>
       </header>
     </>

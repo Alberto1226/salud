@@ -5,9 +5,6 @@
 .swiper-slide{
     background-color: transparent;
     
-    border-radius: 3vw;;
-    
-   
 }
 
 .swiper-slide img {
@@ -17,7 +14,7 @@
     height: 100%;
     object-fit: cover;
     background-color: transparent;
-    border-radius: 1vw;
+    
     
     
   }

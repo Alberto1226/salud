@@ -1,0 +1,79 @@
+.swiper-slide1{
+     
+}
+.mySwiperPatrocinadores{
+    background: url('https://onclickwebdesign.com/wp-content/uploads/footer_bg_pattern.png') 0 0 repeat;
+    padding: 12px 0 35px 25px; 
+}
+.capos{
+    border-radius: 8vw;
+    width: 8vw;
+    height: 8vw;
+}
+.imgPatrocinador{
+    position: relative;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    
+}
+.imgPatrocinador:hover {
+    transform: scale(1.2); /* Escala el elemento al 120% en estado de hover */
+}
+  .footerCardPatro {
+   position: absolute;
+   width: 80%;
+   
+  }
+
+  .footerCardPatro img{
+   width: 20px;
+   height: 20px;
+   margin: 0 0 0 0;
+   cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+   }
+
+   .footerCardPatro img:hover{
+    transform: scale(2.2);
+   }
+
+   @media (max-width: 768px) {
+    
+    
+  }
+
+
+  @media only screen and (max-width: 592px) {
+        .imgPatrocinador{
+            position: relative;
+            width: 15vw;
+            height: 15vw;
+            align-items: center;
+            margin-left: 20px;
+            transition: transform 0.3s;
+            
+        }
+        .imgPatrocinador:hover {
+            transform: scale(1.2); /* Escala el elemento al 120% en estado de hover */
+        }
+      .footerCardPatro {
+       position: absolute;
+       width: 100%;
+       
+      }
+    
+      .footerCardPatro img{
+       display: block;
+       float: left;
+       width: 3vw;
+       height: 3vw;
+       }
+       
+       .mySwiperPatrocinadores{
+        padding: 0 0 13px 0px; 
+    }
+      
+  }

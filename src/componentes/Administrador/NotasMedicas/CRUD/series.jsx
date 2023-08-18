@@ -246,7 +246,7 @@ function Series({ history }) {
         <Button variant="primary" onClick={handleShow} className="btnadd">
           <FontAwesomeIcon icon={faPlus} />
         </Button>
-        <h1 class="text-center">Listado de Series</h1>
+        <h1 class="text-center">Listado de Publicaciones</h1>
         <TblSeries />
       </div>
 
