@@ -2,6 +2,8 @@ import { CardsNews } from "./News/CardsNews/CardNews";
 import { ContactAndPosrt } from "./News/ContactAndPostComment/ContactAndPost";
 import { Eventos } from "./News/Eventos/Eventos";
 import { MasLeidos } from "./News/LosMasLeidos/MasLeidos";
+import { ViewMasLeido } from "./News/LosMasLeidos/viewMasLeidos";
+import { News } from "./News/Recientes/News";
 import { Recientes } from "./News/Recientes/Recientes";
 import "./body.css";
 
@@ -27,9 +29,9 @@ export function Body() {
           </section>
           {/**componente */}
           <CardsNews/>
-          <Recientes/>
+          <News/>
           <Eventos/>
-          <MasLeidos/>
+          <ViewMasLeido/>
           <ContactAndPosrt/>
         </main>
         

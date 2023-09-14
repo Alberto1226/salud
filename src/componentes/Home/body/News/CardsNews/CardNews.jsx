@@ -22,11 +22,11 @@ export function CardsNews(props) {
 
           if (!listarSer && data) {
             setListSeries(formatModelSeries(data));
-            console.log(data);
+            //console.log(data);
           } else {
             const datosSer = formatModelSeries(data);
             setListSeries(datosSer);
-            console.log(datosSer);
+            //console.log(datosSer);
           }
         })
         .catch((e) => {});

@@ -427,9 +427,9 @@ nav ul li a:hover {
     font-size: 1.1em;
     color: #eee;
     font-weight: 600;
-    background-color: #FFB320;
+    background-color: #40ABF5;
     position: absolute;
-    top: -30px;
+    top: -12px;
     left: 30px;
 }
 
@@ -994,3 +994,10 @@ footer ul li a {
         display: none;
     }
 }
+
+
+.imgcardNew{
+    width: 100%;
+    
+}
+

@@ -29,3 +29,24 @@ html {
 .VideoNotaCompleta{
     
 }
+
+.nextvideo2{
+	background-color: rgb(226, 33, 33);
+	border-radius: 1.5vw;
+	
+	color: #fff;
+	font-size: 2.1vw;
+	padding: 0.6vw;
+	max-height: 50px;
+	max-width: 120px;
+	margin-right: 5px;
+	width: 100px;
+	float: right;
+	transition: transform 0.3s;
+}
+
+.nextvideo2:hover{
+	transform: scale(1.2);
+}
+
+

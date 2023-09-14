@@ -92,7 +92,7 @@ export function SwiperPatrocinadores(props) {
         >
           {listarPatro &&
             listarPatro.map((patrocinadores) => (
-              <SwiperSlide className="swiper-slide1" key={patrocinadores.id}>
+              <SwiperSlide className="swiper-slide-patrocinador" key={patrocinadores.id}>
                 <CardPatrocinadores
                   imgpa={patrocinadores.urlImagen}
                   className="cardPatrocinadores"

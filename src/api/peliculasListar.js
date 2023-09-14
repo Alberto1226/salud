@@ -7,7 +7,9 @@ import {
     ENDPOINTActualizarContadorPeliculas,
     ENDPOINTObtenerPelicula,
     ENDPOINTListarPeliculasMasVistas,
-    ENDPOINTListarUltimosCincoEspeciales
+    ENDPOINTListarUltimosCincoEspeciales,
+    ENDPOINTDetallesCategoriasPeliculas,
+    ENDPOINTListarUltimaPelicula
 } from './endpoints';
 import axios from 'axios';
 import { API_HOST } from '../utils/constants';
@@ -25,7 +27,6 @@ export async function obtenerPeliculas(id) {
     };
     return await axios.get(API_HOST + ENDPOINTObtenerPelicula + `/${id}`, config);
 }
-
 
 export async function actualizarContadorPeliculas(id, data) {
 
@@ -49,6 +50,28 @@ export async function listarPeliculas(tipo) {
         }
     };
     return await axios.get(API_HOST + ENDPOINTListarPeliculas + `/?tipo=${tipo}`, config);
+}
+
+export async function listarUltimaPelicula(tipo) {
+    const config = {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+
+        }
+    };
+    return await axios.get(API_HOST + ENDPOINTListarUltimaPelicula + `/?tipo=${tipo}`, config);
+}
+
+export async function listarDetallesCategoriasPeliculas(tipo) {
+    const config = {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+
+        }
+    };
+    return await axios.get(API_HOST + ENDPOINTDetallesCategoriasPeliculas + `/?tipo=${tipo}`, config);
 }
 
 export async function listarPeliculasMasVista(tipo) {
