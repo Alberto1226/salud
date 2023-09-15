@@ -8,13 +8,10 @@ import { listarSeries, obtenerSeries, actualizarContadorSeries } from "../../../
 import { registraHistorialUsuario } from "../../../../../api/historialUsuarios";
 import { getTokenApi, obtenidusuarioLogueado } from "../../../../../api/auth";
 import { listarPatrocinadoresPrioridad, actualizarPatrocinadores, obtenerPatrocinador } from "../../../../../api/patrocinadores";
-//css
-
-//icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
 import "./NotaCompleta.css";
+
 export function NotaMedicaCompleta(props) {
   const locations = useLocation();
   const { id } = queryString.parse(locations.search);
@@ -88,11 +85,11 @@ export function NotaMedicaCompleta(props) {
   /**
    *btn next 
    */
-   const videoRef = useRef(null);
-   const [showNextButton, setShowNextButton] = useState(false);
-   /**
-    * fin btn next
-    */
+  const videoRef = useRef(null);
+  const [showNextButton, setShowNextButton] = useState(false);
+  /**
+   * fin btn next
+   */
   const obtenerSerie = () => {
     try {
       listarSeries()
@@ -106,20 +103,20 @@ export function NotaMedicaCompleta(props) {
           } else {
             const datosSer = formatModelSeries(data);
 
-            if(datosSer.length > 0){
+            if (datosSer.length > 0) {
               const matchIndex = datosSer.findIndex((data) => data.id === id);
               setMatchedIndex(matchIndex);
-            }else{
+            } else {
               setMatchedIndex(-1)
             }
             //console.log(data);
-            
+
             setListSeries(datosSer);
             //console.log(filteredSer);
           }
         })
-        .catch((e) => {});
-    } catch (e) {}
+        .catch((e) => { });
+    } catch (e) { }
   };
 
   useEffect(() => {
@@ -187,7 +184,7 @@ export function NotaMedicaCompleta(props) {
   useEffect(() => {
     if (contadorActual >= redondearDecimal(media)) {
       obtenerPatrocinadoresPrioritarios()
-    } 
+    }
     else {
       obtenerPatrocinadoresNoPrioritarios()
     }
@@ -282,30 +279,34 @@ export function NotaMedicaCompleta(props) {
 
   return (
     <>
-      <NavBar />
-      {listarSer .length > 0 && (
-          <main className="main" key={listarSer[matchedIndex].id ?? ""}>
-            <ReactPlayer onClick={toggleFullScreen} ref={videoRef} id="videofull" url={listarSer[matchedIndex].urlTrailer == undefined ? "" : listarSer[matchedIndex].urlTrailer} controls={true} width="110%" height="" />
-            {/** <img src={series.urlPortada} alt="" className="imgNota" />*/}
-            <div className="grid-container">
+      <NavBar
+        listarSeries={listarSer}
+      />
+      {listarSer.length > 0 && (
+        <main className="main" key={listarSer[matchedIndex].id ?? ""}>
+          <ReactPlayer onClick={toggleFullScreen} ref={videoRef} id="videofull" url={listarSer[matchedIndex].urlVideo == undefined ? "" : listarSer[matchedIndex].urlVideo} controls={true} width="110%" height="" />
+          
+          {/** <img src={series.urlPortada} alt="" className="imgNota" />*/}
+          <div className="resumen">
+          <div className="grid-container">
             <button onClick={handleNextVideo} className="nextvideo2">
-                Next <FontAwesomeIcon icon={faArrowRight} />
-              </button><br/><br/>
-              <h1 className="titulonota">
-                {listarSer[matchedIndex].titulo === undefined ? "" : listarSer[matchedIndex].titulo}
-              </h1>
-              
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: listarSer[matchedIndex].sinopsis == undefined ? "" : listarSer[matchedIndex].sinopsis }} />
-            <div dangerouslySetInnerHTML={{ __html: listarSer[matchedIndex].actores == undefined ? "" : listarSer[matchedIndex].actores }} />
-            
-            
-            <p className="anonota">{listarSer[matchedIndex].año == undefined ? "" : listarSer[matchedIndex].año}</p>
-            
-            <br />
-            <br />
-            <br />
-            <div>
+              Next <FontAwesomeIcon icon={faArrowRight} />
+            </button><br /><br />
+            <h1 className="titulonota">
+              {listarSer[matchedIndex].titulo === undefined ? "" : listarSer[matchedIndex].titulo}
+            </h1>
+
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: listarSer[matchedIndex].sinopsis == undefined ? "" : listarSer[matchedIndex].sinopsis }} />
+          <div dangerouslySetInnerHTML={{ __html: listarSer[matchedIndex].actores == undefined ? "" : listarSer[matchedIndex].actores }} />
+
+
+          <p className="anonota">{listarSer[matchedIndex].año == undefined ? "" : listarSer[matchedIndex].año}</p>
+
+          <br />
+          <br />
+          <br />
+          <div>
             {show && (
               <div
                 style={{
@@ -348,9 +349,10 @@ export function NotaMedicaCompleta(props) {
               </div>
             )}
           </div>
-            {/** <ReactPlayer url={series.urlTrailer} className="VideoNotaCompleta" width={"110%"}/>*/}
-          </main>
-        )}
+          {/** <ReactPlayer url={series.urlTrailer} className="VideoNotaCompleta" width={"110%"}/>*/}
+          </div>
+        </main>
+      )}
     </>
   );
 }
@@ -365,6 +367,7 @@ function formatModelSeries(data) {
       actores: data.actores,
       director: data.director,
       duracion: data.duracion,
+      tipo: "series",
       sinopsis: data.sinopsis,
       calificacion: data.calificacion,
       datosTemporada: data.datosTemporada,
@@ -372,15 +375,14 @@ function formatModelSeries(data) {
       disponibilidad: data.disponibilidad,
       masVisto: data.masVisto,
       recomendado: data.recomendado,
+      urlVideo: data.urlTrailer,
       urlPortada: data.urlPortada,
-      urlTrailer: data.urlTrailer,
       seccion: data.seccion,
       estado: data.estado,
     });
   });
   return dataTemp;
 }
-
 
 function formatModelPatrocinadores(data) {
   const dataTemp = [];

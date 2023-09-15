@@ -10,13 +10,14 @@ import {
   faArrowDown,
   faSearch
 } from "@fortawesome/free-solid-svg-icons";
-import { map } from "lodash"
+import { map } from "lodash";
+import Modal from "react-bootstrap/Modal";
+import { SwiperCategorias } from "./categorias/swCategorias";
 
 
 
-export function NavBar({ listarSeries, listarPeliculas, listarDocumentales, listarSeriesEspeciales, listarEspeciales }) {
-  const listaMultimedia = listarSeries.concat(listarPeliculas, listarDocumentales, listarSeriesEspeciales, listarEspeciales);
-  console.log(listaMultimedia)
+export function NavBar({ listarSeries }) {
+
   const [navMenuVisible, setNavMenuVisible] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [sugerencias, setSugerencias] = useState([]);
@@ -53,7 +54,7 @@ export function NavBar({ listarSeries, listarPeliculas, listarDocumentales, list
     setSearchValue(inputValue);
 
     // Filtrar sugerencias basadas en la entrada del usuario
-    const sugerenciasFiltradas = listaMultimedia.filter((item) =>
+    const sugerenciasFiltradas = listarSeries.filter((item) =>
       item.titulo.toLowerCase().includes(inputValue.toLowerCase())
     );
 
@@ -74,7 +75,7 @@ export function NavBar({ listarSeries, listarPeliculas, listarDocumentales, list
     setIsInputOpen(false);
   };
 
-  const filteredItems = listaMultimedia.filter(
+  const filteredItems = listarSeries.filter(
     item => item.titulo && item.titulo.toLowerCase() === searchValue.toLowerCase()
   );
 
@@ -101,6 +102,14 @@ export function NavBar({ listarSeries, listarPeliculas, listarDocumentales, list
   }, [searchValue]);
 
   console.log(filteredItems)
+
+
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => {
+    setShow(true);
+  };
   return (
     <>
       <header>
@@ -131,141 +140,100 @@ export function NavBar({ listarSeries, listarPeliculas, listarDocumentales, list
                     : "block",
               }}
             >
-              <li>
-              <div className="position-relative buscar">
-              <div >
-                <div className="flex items-center mb-1">
-                  <input
-                    type="text"
-                    value={searchValue}
-                    onChange={handleInputChange}
-                    autoFocus
-                    className="inputbuscar"
-                    placeholder="Buscar..."
-                  />
+              <li className="special">
+                <div className="position-relative buscar">
+                  <div >
+                    <div className="flex items-center mb-1">
+                      <input
+                        type="text"
+                        value={searchValue}
+                        onChange={handleInputChange}
+                        autoFocus
+                        className="inputbuscar"
+                        placeholder="Buscar..."
+                      />
+                    </div>
+                  </div>
+                  {sugerencias.length > 0 && (
+                    <div className="position-absolute mt-2">
+                      <ul className="list-group">
+                        {sugerencias.map((sugerencia) => (
+                          <li
+                            key={sugerencia.id}
+                            className={`list-group-item ${sugerencia === selectedSuggestion ? 'active' : ''
+                              }`}
+                            onClick={() => handleSugerenciaSeleccionada(sugerencia)}
+                          >
+                            {sugerencia.titulo}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-              </div>
-              {sugerencias.length > 0 && (
-                <div className="position-absolute mt-2">
-                  <ul className="list-group">
-                    {sugerencias.map((sugerencia) => (
-                      <li
-                        key={sugerencia.id}
-                        className={`list-group-item ${sugerencia === selectedSuggestion ? 'active' : ''
-                          }`}
-                        onClick={() => handleSugerenciaSeleccionada(sugerencia)}
-                      >
-                        {sugerencia.titulo}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            {
-                tipo == "series" &&
-                (
-                  <>
-                    <Link>
-
-                      <Link to={`/NotaMedicaCompleta?id=${id}&titulo=${titulo}`}><a className="icon">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                      </a></Link>
-
-
-                    </Link>
-                  </>
-                )
-              }
-
-              {
-                tipo == "seriesEspeciales" &&
-                (
-                  <>
-                    <Link>
-
-                      <Link to={`/fullSeriesEspeciales?id=${id}&titulo=${titulo}`}><a className="icon">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                      </a></Link>
-
-
-                    </Link>
-                  </>
-                )
-              }
-
-              {
-                tipo == "peliculas" &&
-                (
-                  <>
-                    <Link>
-
-                      <Link to={`/fullPel?id=${id}&titulo=${titulo}`}><a className="icon">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                      </a></Link>
-
-
-                    </Link>
-                  </>
-                )
-              }
-
-              {
-                tipo == "especiales" &&
-                (
-                  <>
-                    <Link>
-
-                      <Link to={`/fullEsp?id=${id}&titulo=${titulo}`}><a className="icon">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                      </a></Link>
-
-
-                    </Link>
-                  </>
-                )
-              }
-
-              {
-                tipo == "documentales" &&
-                (
-                  <>
-                    <Link>
-
-                      <Link to={`/fullDoc?id=${id}&titulo=${titulo}&id2=${id}`}><a className="icon">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                      </a></Link>
-
-
-                    </Link>
-                  </>
-                )
-              }
-              </li>
-
-              <li>
-                <Link to={`/`}>
-                <a href="#">Inicio</a>
-                </Link>
               </li>
               <li>
-                <a href="#">News</a>
+              {
+                  tipo == "series" &&
+                  (
+                    <>
+                      <Link>
+
+                        <Link to={`/NotaMedicaCompleta?id=${id}&titulo=${titulo}`}><a className="icon">
+                          <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </a></Link>
+
+
+                      </Link>
+                    </>
+                  )
+                }
               </li>
               <li>
-                <a href="#">
-                <FontAwesomeIcon icon={faSearch} />
-                </a>
-              </li>
-             
+              <div className="btncontainer">
+              <Link>
+              <a  id="login-register-button" onClick={() => handleShow()}>
+                <FontAwesomeIcon icon={faArrowDown}/>
+              </a>
+              </Link>
+              <Modal
+                size="xl"
+                show={show}
+                onHide={handleClose}
+                dialogClassName="modal-90w"
+                backdrop="static"
+                keyboard={false}
+                className="mdlCategorias"
+              >
+                <Modal.Header closeButton className="modalcategory">
+
+                </Modal.Header>
+                <Modal.Body>
+                  <SwiperCategorias />
+                </Modal.Body>
+              </Modal>
               
+              
+                <Link to={`/`}>
+
+                  <a href="#" id="login-register-button"><FontAwesomeIcon icon={faHouse} /></a>
+                </Link>
+
+                <Link to={`/login`}>
+            <a href="#" id="login-register-button">
+              <FontAwesomeIcon icon={faUser} />
+            </a>
+          </Link>
+          </div> 
+              </li>
+              
+              
+              
+
+
             </ul>
           </nav>
-          <Link to={`/login`}>
-          <a href="#" id="login-register-button">
-            <FontAwesomeIcon icon={faUser} />
-          </a>
-          </Link>
+          
         </div>
       </header>
     </>

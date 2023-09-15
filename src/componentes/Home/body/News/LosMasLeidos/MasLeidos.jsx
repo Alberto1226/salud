@@ -7,17 +7,17 @@ export function MasLeidos(props) {
           <div className="box">
             <span className="rating-badge gold">{props.con}</span>
             <div className="recent-reviews-image">
-              <img src={props.img1} />
+              <img src={props.img1} className="imagen-ajustada"/>
             </div>
             <div>
-              <h6>{props.nombre}</h6>
-              <p>
-                {props.des
+              <h6 className="tituloMas">
+              {props.nombre
                 .split(" ")
-                .slice(0, 10)
+                .slice(0, 8)
                 .join(" ")
-                .concat(props.des.split(" ").length > 8 ? "..." : "")}
-              </p>
+                .concat(props.nombre.split(" ").length > 8 ? "..." : "")}
+              </h6>
+              
             </div>
           </div>
         </div>

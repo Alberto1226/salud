@@ -71,7 +71,7 @@ export function SwiperMasVistosSer(props) {
 
   const calculateSlidesPerView = () => {
     const screenWidth = window.innerWidth;
-    let slidesToShow = 5; // Número predeterminado de slides a mostrar
+    let slidesToShow = 4; // Número predeterminado de slides a mostrar
 
     if (screenWidth < 768) {
       slidesToShow = 2; // Si el ancho de la pantalla es menor a 768px, muestra solo 1 slide
@@ -90,7 +90,7 @@ export function SwiperMasVistosSer(props) {
 
           <div className="swiper-container">
             <Swiper
-              spaceBetween={20}
+              spaceBetween={5}
               slidesPerView={slides}
               navigation
               pagination={{
@@ -152,6 +152,6 @@ function formatModelSeries(data) {
     contador: data.contador,
     urlPortadaMovil: data.urlPortadaMovil
   }));
-  
+
     return dataTemp;
   }

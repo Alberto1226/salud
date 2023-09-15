@@ -215,6 +215,8 @@
   .main-post__title {
     font-size: 2.9em;
   }
+
+  
 }
 @media screen and (min-width: 1024px) {
   .hide-on-mobile {
@@ -236,3 +238,30 @@
     grid-column: 3 / 6;
   }
 }
+
+
+
+.inputbuscar{
+	background-color: #fff;
+	color: black;
+	width: 100%;
+}
+
+
+
+  li.special {
+	width: 70%; /* Este elemento <li> ocupará el 75% del ancho disponible */
+  }
+
+
+
+  .tituloMas{
+    color: #0e0d0e;
+    
+  }
+  .imagen-ajustada{
+    width: 12rem;
+    height: 7rem;
+  }
+
+  

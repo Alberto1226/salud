@@ -1,4 +1,10 @@
 @media only screen and (max-width: 592px) {
+    header{
+        height: 60px;
+    }
+    li.special {
+        width: 50%; /* Este elemento <li> ocupará el 75% del ancho disponible */
+      }
     .logo-salud{
         display: none;
      }
@@ -36,6 +42,7 @@
         float: left;
         position: absolute;
         width: 90%;
+        
         
     }
     @keyframes slideIn {

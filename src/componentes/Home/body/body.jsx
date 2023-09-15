@@ -28,10 +28,10 @@ export function Body() {
             </div>
           </section>
           {/**componente */}
-          <CardsNews/>
           <News/>
-          <Eventos/>
           <ViewMasLeido/>
+          <CardsNews/>
+          <Eventos/>
           <ContactAndPosrt/>
         </main>
         

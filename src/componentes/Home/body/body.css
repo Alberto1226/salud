@@ -45,6 +45,9 @@ p, label, strong {
     justify-content: space-between;
     position: sticky;
 }
+#nav-menu-container{
+    width: 70rem;
+}
 
 .badge {
     padding: 9px 20px;
@@ -98,7 +101,7 @@ header {
     background-color: #21bb9c;
     padding: 20px 0;
     position: fixed;
-    z-index: 2000;
+    z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
@@ -321,6 +324,7 @@ nav ul li a:hover {
 
 #recent-games .box img {
     width: 100%;
+    height: 12rem;
 }
 
 #recent-games .box .box-lower-section {
@@ -452,6 +456,7 @@ nav ul li a:hover {
 
 #recent-reviews .box .recent-reviews-image img {
     width: 100%;
+    height: 12rem;
 }
 
 #recent-reviews .box p {
@@ -623,6 +628,12 @@ footer ul li a {
 
 /* start: media queries */
 @media (max-width: 1200px) {
+    #nav-menu-container{
+        width: 100%;
+    }
+    li.special {
+        width: 100%; /* Este elemento <li> ocupará el 75% del ancho disponible */
+      }
     .flex {
         max-width: 1000px;
     }
@@ -642,6 +653,12 @@ footer ul li a {
 }
 
 @media (max-width: 991px) {
+    #nav-menu-container{
+        width: 100%;
+    }
+    li.special {
+        width: 100%; /* Este elemento <li> ocupará el 75% del ancho disponible */
+      }
     .flex {
         max-width: 720px;
     }
@@ -730,6 +747,12 @@ footer ul li a {
 } /* end 991px */
 
 @media (max-width: 767px) {
+    #nav-menu-container{
+        width: 100%;
+    }
+    li.special {
+        width: 100%; /* Este elemento <li> ocupará el 75% del ancho disponible */
+      }
     h4 {
         font-size: 1.2em;
     }
@@ -993,11 +1016,19 @@ footer ul li a {
     small{
         display: none;
     }
+
+    li.special {
+        width: 100%; /* Este elemento <li> ocupará el 75% del ancho disponible */
+      }
+
+    #nav-menu-container{
+        width: 100%;
+    }
 }
 
 
-.imgcardNew{
-    width: 100%;
-    
+.container.box img{
+    width: 50rem;
+    height: 10rem;
 }
 
