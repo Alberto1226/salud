@@ -19,6 +19,7 @@ function Series({ history }) {
   //modal
   const [formData, setFormData] = useState(initialFormValue());
   const [imagenPortadaPelicula, setImagenPortadaPelicula] = useState(null);
+  const [imagenPortadaPeliculaMovil, setImagenPortadaPeliculaMovil] = useState(null);
   const [listSeriesCargados, setListSeriesCargados] = useState([]);
 
   const [show, setShow] = useState(false);
@@ -130,6 +131,50 @@ function Series({ history }) {
 
   const renglon = listSeriesCargados.length + 1;
 
+  const [linkImagen1, setLinkImagen1] = useState("");
+
+  const cargarImagen1 = () => {
+    try {
+      subeArchivosCloudinary(imagenPortadaPelicula, "portadasSeries").then(response => {
+        const { data } = response;
+        // console.log(data)
+        const { secure_url } = data;
+        setLinkImagen1(secure_url)
+      }).catch(e => {
+        console.log(e)
+      })
+    } catch (e) {
+      console.log(e)
+
+    }
+  }
+
+  useEffect(() => {
+    cargarImagen1();
+  }, [imagenPortadaPelicula]);
+
+  const [linkImagen2, setLinkImagen2] = useState("");
+
+  const cargarImagen2 = () => {
+    try {
+      subeArchivosCloudinary(imagenPortadaPeliculaMovil, "portadasSeries").then(response => {
+        const { data } = response;
+        // console.log(data)
+        const { secure_url } = data;
+        setLinkImagen2(secure_url)
+      }).catch(e => {
+        console.log(e)
+      })
+    } catch (e) {
+      console.log(e)
+
+    }
+  }
+
+  useEffect(() => {
+    cargarImagen2();
+  }, [imagenPortadaPeliculaMovil]);
+
   //insert
   const onSubmit = (e) => {
     e.preventDefault();
@@ -143,7 +188,7 @@ function Series({ history }) {
           const { data } = response;
         setLoading(true);
         // Sube a cloudinary la imagen principal del producto
-
+        const data2 = formData.patrocinador.split(",")
         const dataTemp = {
           titulo: formData.nombre,
           categorias: listarCat,
@@ -159,10 +204,13 @@ function Series({ history }) {
           header: formData.header,
           recomendado: "",
           contador: "0",
-          urlPortada: data.secure_url,
+          urlPortada: linkImagen1,
           urlTrailer: formData.urlTrailer,
           seccion: "",
-          estado: "true"
+          estado: "true",
+          patrocinador: data2[0],
+          patrocinadorPortada: data2[1],
+          urlPortadaMovil: linkImagen2,
         };
         registraSeries(dataTemp).then((response) => {
           const { data } = response;
@@ -251,10 +299,11 @@ function Series({ history }) {
       </div>
 
       <Modal
-        size="lg"
+        size="xl"
         aria-labelledby="example-modal-sizes-title-lg"
         show={show}
         onHide={handleClose}
+        className="mdlInsertar"
         backdrop="static"
         keyboard={false}
       >
@@ -271,6 +320,16 @@ function Series({ history }) {
                   className="imagenPortadaPelicula"
                 >
                   <Dropzone setImagenFile={setImagenPortadaPelicula} />
+                </div>
+              </div>
+              <br />
+              <div className="imagenPrincipal">
+                <h4 className="textoImagenPrincipal">Sube tu imagen para movil</h4>
+                <div
+                  title="Seleccionar imagen de la categoría"
+                  className="imagenPortadaPelicula"
+                >
+                  <Dropzone setImagenFile={setImagenPortadaPeliculaMovil} />
                 </div>
               </div>
               <br />

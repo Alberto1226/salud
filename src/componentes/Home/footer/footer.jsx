@@ -11,7 +11,7 @@ export function Footer() {
   
 
             <small>
-              Copyright © 2019 All rights reserved | Salud Chanel{" "}
+              Copyright © 2023 All rights reserved | Salud Chanel{" "}
               <span className="footer-heart">♥</span> by{" "}
               <a href="https://www.ideasysolucionestecnologicas.com/" target="_blank">
                 ISOTECH
