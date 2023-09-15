@@ -29,7 +29,7 @@ export function HeaderDash() {
 
   return (
     <>
-    <NavBar listarSeries={listarSer}/>
+      <NavBar listarSeries={listarSer} />
       <nav className="main-header navbar navbar-expand navbar-white navbar-light">
         {/* Left navbar links */}
         <ul className="navbar-nav">
@@ -48,10 +48,10 @@ export function HeaderDash() {
               Home
             </a>
           </li>
-          
+
         </ul>
         {/* Right navbar links */}
-        
+
       </nav>
     </>
   );
