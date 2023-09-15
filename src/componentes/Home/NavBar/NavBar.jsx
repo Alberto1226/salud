@@ -13,8 +13,15 @@ import {
 import { map } from "lodash";
 import Modal from "react-bootstrap/Modal";
 import { SwiperCategorias } from "./categorias/swCategorias";
-
-
+import {
+  getTokenApi,
+  obtenidusuarioLogueado,
+  logoutApi,
+} from "../../../api/auth";
+import { obtenerUsuario } from "../../../api/usuarios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export function NavBar({ listarSeries }) {
 
@@ -27,6 +34,16 @@ export function NavBar({ listarSeries }) {
   const toggleNavMenu = () => {
     setNavMenuVisible((prevVisible) => !prevVisible);
   };
+
+  const redirecciona = useNavigate();
+  const location = useLocation();
+  //Para cerrar la sesion
+  const cerrarSesion = () => {
+    logoutApi();
+    redirecciona("");
+    toast.success("Sesión cerrada");
+    window.location.reload();
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -110,6 +127,29 @@ export function NavBar({ listarSeries }) {
   const handleShow = () => {
     setShow(true);
   };
+
+  const [idUsuario, setIdeUsuario] = useState("");
+
+  const obtenerDatosUsuario = () => {
+    try {
+      obtenerUsuario(obtenidusuarioLogueado(getTokenApi())).then(response => {
+        const { data } = response;
+        setIdeUsuario(data._id);
+      }).catch((e) => {
+        if (e.message === 'Network Error') {
+          //console.log("No hay internet")
+          toast.error("Conexión al servidor no disponible");
+        }
+      })
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  useEffect(() => {
+    obtenerDatosUsuario();
+  }, []);
+
   return (
     <>
       <header>
@@ -173,7 +213,7 @@ export function NavBar({ listarSeries }) {
                 </div>
               </li>
               <li>
-              {
+                {
                   tipo == "series" &&
                   (
                     <>
@@ -190,50 +230,63 @@ export function NavBar({ listarSeries }) {
                 }
               </li>
               <li>
-              <div className="btncontainer">
-              <Link>
-              <a  id="login-register-button" onClick={() => handleShow()}>
-                <FontAwesomeIcon icon={faArrowDown}/>
-              </a>
-              </Link>
-              <Modal
-                size="xl"
-                show={show}
-                onHide={handleClose}
-                dialogClassName="modal-90w"
-                backdrop="static"
-                keyboard={false}
-                className="mdlCategorias"
-              >
-                <Modal.Header closeButton className="modalcategory">
+                <div className="btncontainer">
+                  <Link>
+                    <a id="login-register-button" onClick={() => handleShow()}>
+                      <FontAwesomeIcon icon={faArrowDown} />
+                    </a>
+                  </Link>
+                  <Modal
+                    size="xl"
+                    show={show}
+                    onHide={handleClose}
+                    dialogClassName="modal-90w"
+                    backdrop="static"
+                    keyboard={false}
+                    className="mdlCategorias"
+                  >
+                    <Modal.Header closeButton className="modalcategory">
 
-                </Modal.Header>
-                <Modal.Body>
-                  <SwiperCategorias />
-                </Modal.Body>
-              </Modal>
-              
-              
-                <Link to={`/`}>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <SwiperCategorias />
+                    </Modal.Body>
+                  </Modal>
 
-                  <a href="#" id="login-register-button"><FontAwesomeIcon icon={faHouse} /></a>
-                </Link>
+                  <Link to={`/`}>
+                    <a href="#" id="login-register-button"><FontAwesomeIcon icon={faHouse} /></a>
+                  </Link>
 
-                <Link to={`/login`}>
-            <a href="#" id="login-register-button">
-              <FontAwesomeIcon icon={faUser} />
-            </a>
-          </Link>
-          </div> 
+                  {idUsuario == "" && (
+                    <>
+                      <Link to={`/login`}>
+                        <a href="#" id="login-register-button">
+                          <FontAwesomeIcon icon={faUser} />
+                        </a>
+                      </Link>
+                    </>
+                  )}
+
+                  {idUsuario != "" && (
+                    <>
+                      <a href="#" id="login-register-button" onClick={() => cerrarSesion()}>
+
+                        <FontAwesomeIcon
+                          icon={faUser}
+                        />
+                      </a>
+                    </>
+                  )}
+                </div>
               </li>
-              
-              
-              
+
+
+
 
 
             </ul>
           </nav>
-          
+
         </div>
       </header>
     </>

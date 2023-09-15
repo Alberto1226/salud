@@ -1,6 +1,5 @@
 
 import { listarSeries } from "../../../api/series";
-import { listarPeliculas } from "../../../api/peliculasListar";
 import React, { useState, useEffect } from "react";
 import { NavBar } from "./NavBar";
 export function FullNav() {
@@ -28,8 +27,6 @@ export function FullNav() {
   useEffect(() => {
     obtenerSeries();
   }, []);
-
-  console.log(listarSeries)
 
   return (
     <>

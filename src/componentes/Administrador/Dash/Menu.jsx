@@ -1,13 +1,38 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-
+import { useState, useEffect } from "react";
 //COMPONENTES
 import Categorias from "../Categorias/CRUD/insert";
 import Patrocinadores from "../Patrocinadores/CRUD/patrocinadores";
 import Usuarios from "../Usuarios/CRUD/usuarios";
-import Series from "../NotasMedicas/CRUD/series"
+import Series from "../NotasMedicas/CRUD/series";
+import { obtenerUsuario } from "../../../api/usuarios";
+import { getTokenApi, isExpiredToken, logoutApi, getSucursal, obtenidusuarioLogueado } from "../../../api/auth";
+import { toast } from "react-toastify";
 
 export function MenuDash() {
+
+  const [rolUsuario, setRolUsuario] = useState();
+
+  const obtenerDatosUsuario = () => {
+    try {
+      obtenerUsuario(obtenidusuarioLogueado(getTokenApi())).then(response => {
+        const { data } = response;
+        setRolUsuario(data.rol);
+      }).catch((e) => {
+        if (e.message === 'Network Error') {
+          //console.log("No hay internet")
+          toast.error("Conexión al servidor no disponible");
+        }
+      })
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  useEffect(() => {
+    obtenerDatosUsuario();
+  }, []);
+
   const [activeMenu, setActiveMenu] = useState("home");
   /**ver componentes */
   const [showComponent, setShowComponent] = useState(false);
@@ -102,17 +127,25 @@ export function MenuDash() {
 
               </li>
 
-              <li className="nav-item">
-              <Link onClick={handleClick2}>
-                <a href="#" className="nav-link">
-                  <i className="nav-icon fas fa-user" />
-                  <p>
-                    Usuarios
+              {
+                (rolUsuario == "administrador") &&
+                (
+                  <>
+                    <li className="nav-item">
+                      <Link onClick={handleClick2}>
+                        <a href="#" className="nav-link">
+                          <i className="nav-icon fas fa-user" />
+                          <p>
+                            Usuarios
 
-                  </p>
-                </a>
-                </Link>
-              </li>
+                          </p>
+                        </a>
+                      </Link>
+                    </li>
+                  </>
+                )
+              }
+
               <li className="nav-item">
                 <Link onClick={handleClick}>
                   <a href="#" className="nav-link">
@@ -123,26 +156,35 @@ export function MenuDash() {
                   </a>
                 </Link>
               </li>
+
+              {
+                (rolUsuario == "administrador") &&
+                (
+                  <>
+                    <li className="nav-item">
+                      <Link onClick={handleClick1}>
+                        <a href="#" className="nav-link">
+                          <i className="nav-icon fas fa-square" />
+                          <p>
+                            Patrocinadores
+
+                          </p>
+                        </a>
+                      </Link>
+                    </li>
+                  </>
+                )
+              }
+
               <li className="nav-item">
-                <Link onClick={handleClick1}>
+                <Link onClick={handleClick3}>
                   <a href="#" className="nav-link">
-                    <i className="nav-icon fas fa-square" />
+                    <i className="nav-icon fas fa-image" />
                     <p>
-                      Patrocinadores
+                      Nueva Publicación
 
                     </p>
                   </a>
-                </Link>
-              </li>
-              <li className="nav-item">
-              <Link onClick={handleClick3}>
-                <a href="#" className="nav-link">
-                  <i className="nav-icon fas fa-image" />
-                  <p>
-                    Nueva Publicación
-
-                  </p>
-                </a>
                 </Link>
               </li>
 
