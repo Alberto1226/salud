@@ -169,7 +169,7 @@ export function SwiperEstrenos(props) {
 
           <div className="swiper-container">
             <Swiper
-              spaceBetween={20}
+              spaceBetween={5}
               slidesPerView={slides}
               navigation
               pagination={{

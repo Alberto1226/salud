@@ -2,9 +2,7 @@
     header{
         height: 60px;
     }
-    li.special {
-        width: 50%; /* Este elemento <li> ocupará el 75% del ancho disponible */
-      }
+    
     .logo-salud{
         display: none;
      }

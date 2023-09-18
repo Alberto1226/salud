@@ -14,6 +14,7 @@
   .numero-slide{
     position: fixed;
     font-size: 30px;
+    background-color: transparent;
   }
 
   .swiper-slide::before {
@@ -329,7 +330,7 @@
   @media (max-width: 500px) {
   
     .swiper{
-      background-color: #222;
+      background-color: transparent;
       color: #ccc;
     }
   

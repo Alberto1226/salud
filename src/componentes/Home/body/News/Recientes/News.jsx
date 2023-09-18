@@ -9,6 +9,7 @@ export function News() {
         <SwiperEstrenos/>
         
       </section>
+     
     </>
   );
 }
