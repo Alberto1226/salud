@@ -1,5 +1,5 @@
 import img from "../../../../../assets/img/cards/foto1.png";
-import imglogo from "../../../../../assets/img/logo.webp";
+import imglogo from "../../../../../assets/img/logo.png";
 import img1 from "../../../../../assets/img/cards/foto2.png";
 import img2 from "../../../../../assets/img/cards/foto3.png";
 export function ContactAndPosrt() {

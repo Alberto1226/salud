@@ -13,9 +13,9 @@ export function MasLeidos(props) {
               <h6 className="tituloMas">
               {props.nombre
                 .split(" ")
-                .slice(0, 8)
+                .slice(0, 6)
                 .join(" ")
-                .concat(props.nombre.split(" ").length > 8 ? "..." : "")}
+                .concat(props.nombre.split(" ").length > 6 ? "..." : "")}
               </h6>
               
             </div>

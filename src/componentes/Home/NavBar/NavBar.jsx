@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import img from "../../../assets/img/logo.webp";
+import img from "../../../assets/img/logo.png";
 import React, { useState, useEffect } from "react";
 /**icon */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

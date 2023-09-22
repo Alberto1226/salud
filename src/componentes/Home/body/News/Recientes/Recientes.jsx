@@ -10,9 +10,9 @@ export function Recientes(props) {
               <h4>
               {props.nombre
                 .split(" ")
-                .slice(0, 50)
+                .slice(0, 5)
                 .join(" ")
-                .concat(props.nombre.split(" ").length > 8 ? "..." : "")}
+                .concat(props.nombre.split(" ").length > 5 ? "..." : "")}
               </h4>
               
              

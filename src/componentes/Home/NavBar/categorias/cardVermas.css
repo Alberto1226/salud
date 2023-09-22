@@ -325,9 +325,24 @@
   .custom-transition.show-poster {
     opacity: 0; /* Oculta el póster durante la transición */
   }
+
   
+  .mt-2 ul li{
+    background-color: #333;
+    color: #00ffcc;
+    font-size: 12px;
+  }
+
+  .mt-2 ul{
+    border-color: #00ffcc;
+    
+  }
   
   @media (max-width: 500px) {
+
+    .mt-2{
+        width: 350px;
+    }
   
     .swiper{
       background-color: transparent;

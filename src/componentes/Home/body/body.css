@@ -99,7 +99,7 @@ p, label, strong {
 /* start: header styles */
 header {
     background-color: #21bb9c;
-    padding: 20px 0;
+    padding: 5px 0;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -746,10 +746,16 @@ footer ul li a {
     }
 } /* end 991px */
 
-@media (max-width: 767px) {
-    #nav-menu-container{
-        width: 100%;
+@media (max-width: 867px) {
+     /*post a comment*/
+     #posts-comments .posts-comments-box{
+        display: none;
     }
+
+    #posts-comments{
+        display: none;
+    }
+    
     li.special {
         width: 100%; /* Este elemento <li> ocupará el 75% del ancho disponible */
       }
@@ -774,7 +780,7 @@ footer ul li a {
     }
 
     nav ul li {
-        display: block;
+        
         padding: 15px 0 15px 20px;
         border-bottom: 1px solid #FFB320;
         margin: 0;
@@ -893,6 +899,18 @@ footer ul li a {
 
 /*movil*/
 @media only screen and (max-width: 592px) {
+    
+    #latest-news{
+        margin: 0;
+    }
+    #recent-games .box .box-lower-section h4 {
+        font-size: 11px;
+        color: #131313;
+    }
+
+    .tituloMas{
+        font-size: 11px;
+    }
     #feedbackForm{
         display: none;
     }
@@ -922,23 +940,32 @@ footer ul li a {
         font-size: 10pxs;
     }
     
-    
+    #recent-games .box span{
+        font-size: 12px;
+        float: right;
+        margin-left: 40px;
+        margin-top: -10px;
+        
+    }
     #recent-games h1{
-        font-size: 15px;
+        font-size: 20px;
         color: #131313;
         text-shadow: -6px -3px 31px rgba(52,205,172,1);
+        color: #ddd;
+        padding-bottom: 2vw;
     }
     #recent-games{
         padding: 2vw;
+        margin: 0;
+        background-color: #312f2f;
+        background-image: none;
+        color: white;
     }
     #recent-games .box {
         flex-basis: 32%;
         border-radius: 1vw;
     }
-    #recent-games .box span{
-        font-size: 10px;
-        display: none;
-    }
+    
     #recent-games .box p {
         display: none;
         

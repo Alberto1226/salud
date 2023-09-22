@@ -74,6 +74,7 @@
     max-height: 0;
     opacity: 0;
     transition: max-height 1.5s ease, opacity 1s ease;
+    background-color: transparent;
   }
   .news-card:hover .news-card__details-wrapper {
     max-height: 20rem;
@@ -91,6 +92,7 @@
   }
   .news-card__excerpt {
     font-weight: 300;
+    background-color: transparent;
   }
   .news-card__read-more {
     background: black;
@@ -128,6 +130,24 @@
   /*Movil*/
 
   @media only screen and (max-width: 592px) {
+    .news-card__read-more{
+      margin-left: 0;
+      margin-right: 10px;
+      background-color: rgb(165, 8, 8);
+      color: aliceblue;
+      font-size: 10px;
+      width: 75px;
+
+    }
+    .news-card__post-date{
+      font-size: 10px;
+    }
+    .news-card__excerpt {
+      font-weight: 300;
+      font-size: 7px;
+      margin-left: 0;
+      margin-right: 20px;
+    }
     .content-wrapper2 {
       width: 100%;
       display: flex;

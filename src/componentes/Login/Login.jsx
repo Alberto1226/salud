@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import jwtDecode from "jwt-decode";
 import { obtenerUsuario } from "../../api/usuarios";
 import { useNavigate } from "react-router-dom";
-
+import img from "../../assets/img/logo.png"
 export function Login() {
   const [formData, setFormData] = useState(initialFormValue);
   const [signInLoading, setSignInLoading] = useState(false);
@@ -91,7 +91,7 @@ export function Login() {
       <div class="contentLogin">
         <div class="containerLogin">
           <div class="menu">
-            {/**<img src={img} alt="" className="imglogin" /> */}
+            <img src={img} alt="" className="imglogin" /> 
             <label>
               Únete a la plataforma de videos que promueve la Salud en México para el mundo
             </label>

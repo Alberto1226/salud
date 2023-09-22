@@ -46,25 +46,32 @@ export function CardsNews(props) {
           
         <div className="news-card" key={series.id}>
           
-          <a href="#" className="news-card__card-link" />
+          <a  className="news-card__card-link" />
           <img
             src={series.urlPortada}
             alt
             className="news-card__image"
           />
           <div className="news-card__text-wrapper">
-            <h2 className="news-card__title">{series.titulo}</h2>
-            <div className="news-card__post-date">{series.año}</div>
-            <div className="news-card__details-wrapper">
-              <p className="news-card__excerpt">
-              
-              {series.sinopsis
+            <h2 className="news-card__title">
+            {series.titulo
                 .split(" ")
-                .slice(0, 50)
+                .slice(0, 6)
                 .join(" ")
-                .concat(series.sinopsis.split(" ").length > 50 ? "..." : "")}
-            
-              </p>
+                .concat(series.titulo.split(" ").length > 6 ? "..." : "")}
+            </h2>
+            <div className="news-card__post-date">{series.año}</div>
+            <div className="news-card__details-wrapper" >
+              <p className="news-card__excerpt" 
+              dangerouslySetInnerHTML={{
+                
+                __html:series.sinopsis
+                .split(" ")
+                .slice(0, 20)
+                .join(" ")
+                .concat(series.sinopsis.split(" ").length > 20 ? "..." : "")
+                
+              }} />
               <Link to={`/NotaMedicaCompleta?id=${series.id}`}>
               <a  className="news-card__read-more">
                 Leer Mas <i className="fas fa-long-arrow-alt-right" />
