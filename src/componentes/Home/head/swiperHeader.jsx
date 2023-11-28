@@ -19,7 +19,7 @@ export function SwiperHeader(props) {
     
     // Agrega aquí más nombres de imágenes
   ];
-  const [randomIndex, setRandomIndex] = useState(0);
+  /*const [randomIndex, setRandomIndex] = useState(0);
   useEffect(() => {
     const videoElement = document.getElementById("videoheader");
 
@@ -30,7 +30,7 @@ export function SwiperHeader(props) {
         setShowPoster(false);
       }, 1000);
     }
-  }, []);
+  }, []);*/
 
   const videoStyle = {
     width: "100%",
