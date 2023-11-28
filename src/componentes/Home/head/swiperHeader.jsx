@@ -108,7 +108,7 @@ export function SwiperHeader(props) {
               height={"100vh"}
               playing={true}
               loop
-              volume={0.2}
+              muted
               className={`video-element ${showPoster ? "show-poster" : ""}`}
               style={videoStyle}
             />
