@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 
 //imagenes
 import de1 from "../../../assets/img/logo.png";
+import ReactPlayer from "react-player";
 
 
 SwiperCore.use([Pagination, Autoplay]);
@@ -38,7 +39,7 @@ export function SwiperHeader(props) {
     position: "absolute",
     top: 0,
     left: 0,
-    zIndex: -1,
+    zIndex: 2,
   };
 
   const posterStyle = {
@@ -98,17 +99,19 @@ export function SwiperHeader(props) {
           <div className="headerVideo">
             
               
-            <video
+            <ReactPlayer
               id="videoheader"
               //src={slide.src}
-              src={urportada}
-              autoPlay
+              url={urportada}
               playsinline
+              width={"100vw"}
+              height={"100vh"}
+              playing={true}
               loop
-              muted
+              volume={0.2}
               className={`video-element ${showPoster ? "show-poster" : ""}`}
               style={videoStyle}
-            ></video>
+            />
             
           
             <img src={de1} alt="Poster" style={posterStyle} />
