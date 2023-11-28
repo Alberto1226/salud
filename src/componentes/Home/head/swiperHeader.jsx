@@ -55,7 +55,7 @@ export function SwiperHeader(props) {
   const randomSlides = [
     {
       src: "http://saludchannel.com:8080/salud/principal/1.mp4",
-      poster: randomImages[0],
+      //poster: randomImages[0],
     },
     /*{
       src: "https://www.mxtvmas.com:8443/mimexico/series/conciertos/concierto2.mp4",
