@@ -110,9 +110,9 @@ export function SwiperHeader(props) {
               style={videoStyle}
             ></video>
             
-           
+           {/** 
             <img src={de1} className="imgprotector" alt="Poster" style={posterStyle} />
-            
+            */}
           </div>
         </SwiperSlide>
         ))}
