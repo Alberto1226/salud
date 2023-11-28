@@ -106,7 +106,7 @@ export function SwiperHeader(props) {
               playsinline
               loop
               muted
-              className={`video-element ${showPoster ? "show-poster" : ""}`}
+              //className={`video-element ${showPoster ? "show-poster" : ""}`}
               style={videoStyle}
             ></video>
             
