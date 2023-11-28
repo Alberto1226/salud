@@ -19,7 +19,7 @@ export function SwiperHeader(props) {
     
     // Agrega aquí más nombres de imágenes
   ];
-  /*const [randomIndex, setRandomIndex] = useState(0);
+  const [randomIndex, setRandomIndex] = useState(0);
   useEffect(() => {
     const videoElement = document.getElementById("videoheader");
 
@@ -30,7 +30,7 @@ export function SwiperHeader(props) {
         setShowPoster(false);
       }, 1000);
     }
-  }, []);*/
+  }, []);
 
   const videoStyle = {
     width: "100%",
@@ -55,7 +55,7 @@ export function SwiperHeader(props) {
   const randomSlides = [
     {
       src: "http://saludchannel.com:8080/salud/principal/1.mp4",
-      //poster: randomImages[0],
+      poster: randomImages[0],
     },
     /*{
       src: "https://www.mxtvmas.com:8443/mimexico/series/conciertos/concierto2.mp4",
@@ -106,13 +106,13 @@ export function SwiperHeader(props) {
               playsinline
               loop
               muted
-              //className={`video-element ${showPoster ? "show-poster" : ""}`}
+              className={`video-element ${showPoster ? "show-poster" : ""}`}
               style={videoStyle}
             ></video>
             
-           {/** 
-            <img src={de1} className="imgprotector" alt="Poster" style={posterStyle} />
-            */}
+          
+            <img src={de1} alt="Poster" style={posterStyle} />
+            
           </div>
         </SwiperSlide>
         ))}
