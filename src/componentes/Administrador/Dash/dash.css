@@ -1,0 +1,29 @@
+.main-sidebar{
+    background-color: #222c3f;
+    height: 100vh;
+  }
+  
+  .content-wrapper{
+    max-height: 80vh;
+    overflow: scroll;
+  }
+
+  .MuiPaper-root{
+    margin: 15px;
+  }
+
+  .MuiToolbar-root{
+    background-color: rgb(34, 47, 83);
+    color: aliceblue;
+  }
+
+  .MuiToolbar-root button{
+    color: aliceblue;
+  }
+
+  .MuiButtonBase-root{
+    color: aliceblue;
+    background-color: aliceblue;
+  }
+
+  

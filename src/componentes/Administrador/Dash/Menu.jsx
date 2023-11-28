@@ -8,6 +8,7 @@ import Series from "../NotasMedicas/CRUD/series";
 import { obtenerUsuario } from "../../../api/usuarios";
 import { getTokenApi, isExpiredToken, logoutApi, getSucursal, obtenidusuarioLogueado } from "../../../api/auth";
 import { toast } from "react-toastify";
+import "./dash.css";
 
 export function MenuDash() {
 

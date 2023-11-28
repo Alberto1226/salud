@@ -28,7 +28,7 @@ export function SwiperHeader(props) {
       videoElement.poster = randomImages[randomIndex];
       setTimeout(() => {
         setShowPoster(false);
-      }, 9000);
+      }, 1000);
     }
   }, []);
 
