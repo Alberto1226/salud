@@ -46,4 +46,5 @@ export default [
         path: "/Registro",
         page: RegistroUno
     }
+    //politicasPrivacida
 ]

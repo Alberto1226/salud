@@ -77,7 +77,7 @@ export function SwiperHeader(props) {
     randomSlides.sort(() => Math.random() - 0.5)
   );
 
-  var urportada="http://saludchannel.com:8080/salud/principal/1.mp4";
+  var urportada="https://saludchannel.com:8443/salud/principal/1.mp4";
 
   return (
     <>
@@ -99,19 +99,16 @@ export function SwiperHeader(props) {
           <div className="headerVideo">
             
               
-            <ReactPlayer
+            <video
               id="videoheader"
               //src={slide.src}
-              url={urportada}
-              playsinline
-              width={"100vw"}
-              height={"100vh"}
-              playing={true}
+              src={urportada}
+              autoPlay
               loop
               muted
               className={`video-element ${showPoster ? "show-poster" : ""}`}
               style={videoStyle}
-            />
+            ></video>
             
           
             <img src={de1} alt="Poster" style={posterStyle} />
