@@ -77,7 +77,7 @@ export function SwiperHeader(props) {
     randomSlides.sort(() => Math.random() - 0.5)
   );
 
-  var urportada="https://isotech.mx/videosmimexico/saludchannel.webm";
+  var urportada="https://saludchannel.com:8443/salud/principal/2.mp4";
 
   return (
     <>
